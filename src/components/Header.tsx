@@ -23,10 +23,10 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0A0C12]/95 backdrop-blur-md border-b border-[#023661]/30">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#2B103D]/95 backdrop-blur-md border-b border-[#6574FF]/30">
       <div className="max-w-[1440px] mx-auto px-6 md:px-[60px]">
         <div className="flex items-center justify-between h-20">
-          <Link href={getLocalizedHref("/")} className="text-white text-lg font-bold tracking-[4px] hover:text-[#DB5227] transition-colors">
+          <Link href={getLocalizedHref("/")} className="text-white text-lg font-bold tracking-[4px] hover:text-[#B8F60D] transition-colors">
             BLACKLISTED.MN
           </Link>
 
@@ -35,7 +35,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={getLocalizedHref(item.href)}
-                className="text-[#76828E] text-[13px] font-medium tracking-[2px] hover:text-[#DB5227] transition-colors"
+                className="text-white/50 text-[13px] font-medium tracking-[2px] hover:text-[#B8F60D] transition-colors"
               >
                 {item.label}
               </Link>
@@ -47,8 +47,8 @@ export default function Header() {
               href={`/mn${pathname.replace(/^\/(mn|en)/, "")}`} 
               className={`px-3 py-1 rounded-full text-sm font-bold transition-all ${
                 locale === "mn" 
-                  ? "bg-[#DB5227] text-white" 
-                  : "text-[#76828E] hover:text-white"
+                  ? "bg-[#B8F60D] text-[#2B103D]" 
+                  : "text-white/50 hover:text-white"
               }`}
             >
               MN
@@ -57,8 +57,8 @@ export default function Header() {
               href={`/en${pathname.replace(/^\/(mn|en)/, "")}`} 
               className={`px-3 py-1 rounded-full text-sm font-bold transition-all ${
                 locale === "en" 
-                  ? "bg-[#DB5227] text-white" 
-                  : "text-[#76828E] hover:text-white"
+                  ? "bg-[#B8F60D] text-[#2B103D]" 
+                  : "text-white/50 hover:text-white"
               }`}
             >
               EN
@@ -77,21 +77,21 @@ export default function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden pb-6 space-y-4 border-t border-[#023661]/20 pt-4">
+          <div className="md:hidden pb-6 space-y-4 border-t border-[#6574FF]/20 pt-4">
             {navItems.map((item) => (
               <Link 
                 key={item.href} 
                 href={getLocalizedHref(item.href)} 
-                className="block text-[#76828E] text-[13px] font-medium tracking-[2px] hover:text-[#DB5227] transition-colors" 
+                className="block text-white/50 text-[13px] font-medium tracking-[2px] hover:text-[#B8F60D] transition-colors" 
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
             <div className="flex items-center gap-2 text-sm pt-4">
-              <Link href={`/mn${pathname.replace(/^\/(mn|en)/, "")}`} className={locale === "mn" ? "font-bold text-[#DB5227]" : "text-[#76828E]"}>MN</Link>
-              <span className="text-[#76828E]">|</span>
-              <Link href={`/en${pathname.replace(/^\/(mn|en)/, "")}`} className={locale === "en" ? "font-bold text-[#DB5227]" : "text-[#76828E]"}>EN</Link>
+              <Link href={`/mn${pathname.replace(/^\/(mn|en)/, "")}`} className={locale === "mn" ? "font-bold text-[#B8F60D]" : "text-white/50"}>MN</Link>
+              <span className="text-white/30">|</span>
+              <Link href={`/en${pathname.replace(/^\/(mn|en)/, "")}`} className={locale === "en" ? "font-bold text-[#B8F60D]" : "text-white/50"}>EN</Link>
             </div>
           </div>
         )}
