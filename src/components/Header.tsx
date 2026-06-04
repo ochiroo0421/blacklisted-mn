@@ -23,10 +23,10 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-[#00f0ff]/20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0A0C12]/95 backdrop-blur-md border-b border-[#023661]/30">
       <div className="max-w-[1440px] mx-auto px-6 md:px-[60px]">
         <div className="flex items-center justify-between h-20">
-          <Link href={getLocalizedHref("/")} className="text-white text-lg font-bold tracking-[4px] hover:text-[#00f0ff] transition-colors">
+          <Link href={getLocalizedHref("/")} className="text-white text-lg font-bold tracking-[4px] hover:text-[#DB5227] transition-colors">
             BLACKLISTED.MN
           </Link>
 
@@ -35,19 +35,32 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={getLocalizedHref(item.href)}
-                className="text-[#a0a0a0] text-[13px] font-medium tracking-[2px] hover:text-[#00f0ff] transition-colors"
+                className="text-[#76828E] text-[13px] font-medium tracking-[2px] hover:text-[#DB5227] transition-colors"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-2 text-sm">
-            <Link href={`/mn${pathname.replace(/^\/(mn|en)/, "")}`} className={locale === "mn" ? "font-bold text-[#ff00ff]" : "text-[#a0a0a0] hover:text-[#00f0ff]"}>
+          <div className="hidden md:flex items-center gap-3">
+            <Link 
+              href={`/mn${pathname.replace(/^\/(mn|en)/, "")}`} 
+              className={`px-3 py-1 rounded-full text-sm font-bold transition-all ${
+                locale === "mn" 
+                  ? "bg-[#DB5227] text-white" 
+                  : "text-[#76828E] hover:text-white"
+              }`}
+            >
               MN
             </Link>
-            <span className="text-[#a0a0a0]">|</span>
-            <Link href={`/en${pathname.replace(/^\/(mn|en)/, "")}`} className={locale === "en" ? "font-bold text-[#ff00ff]" : "text-[#a0a0a0] hover:text-[#00f0ff]"}>
+            <Link 
+              href={`/en${pathname.replace(/^\/(mn|en)/, "")}`} 
+              className={`px-3 py-1 rounded-full text-sm font-bold transition-all ${
+                locale === "en" 
+                  ? "bg-[#DB5227] text-white" 
+                  : "text-[#76828E] hover:text-white"
+              }`}
+            >
               EN
             </Link>
           </div>
@@ -64,16 +77,21 @@ export default function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden pb-6 space-y-4">
+          <div className="md:hidden pb-6 space-y-4 border-t border-[#023661]/20 pt-4">
             {navItems.map((item) => (
-              <Link key={item.href} href={getLocalizedHref(item.href)} className="block text-[#a0a0a0] text-[13px] font-medium tracking-[2px] hover:text-[#00f0ff] transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              <Link 
+                key={item.href} 
+                href={getLocalizedHref(item.href)} 
+                className="block text-[#76828E] text-[13px] font-medium tracking-[2px] hover:text-[#DB5227] transition-colors" 
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {item.label}
               </Link>
             ))}
             <div className="flex items-center gap-2 text-sm pt-4">
-              <Link href={`/mn${pathname.replace(/^\/(mn|en)/, "")}`} className={locale === "mn" ? "font-bold text-[#ff00ff]" : "text-[#a0a0a0]"}>MN</Link>
-              <span className="text-[#a0a0a0]">|</span>
-              <Link href={`/en${pathname.replace(/^\/(mn|en)/, "")}`} className={locale === "en" ? "font-bold text-[#ff00ff]" : "text-[#a0a0a0]"}>EN</Link>
+              <Link href={`/mn${pathname.replace(/^\/(mn|en)/, "")}`} className={locale === "mn" ? "font-bold text-[#DB5227]" : "text-[#76828E]"}>MN</Link>
+              <span className="text-[#76828E]">|</span>
+              <Link href={`/en${pathname.replace(/^\/(mn|en)/, "")}`} className={locale === "en" ? "font-bold text-[#DB5227]" : "text-[#76828E]"}>EN</Link>
             </div>
           </div>
         )}
