@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import WriteReviewSection from "@/components/WriteReviewSection";
 import SearchSection from "@/components/SearchSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import StatsSection from "@/components/StatsSection";
@@ -9,6 +10,7 @@ export default function HomePage() {
   return (
     <div className="bg-[#0A0C12]">
       <HeroSection />
+      <WriteReviewSection />
       <SearchSection />
       <FeaturesSection />
       <StatsSection />
