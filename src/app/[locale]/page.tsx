@@ -10,8 +10,8 @@ export default function HomePage() {
   return (
     <div className="bg-[#0A0C12]">
       <HeroSection />
-      <WriteReviewSection />
       <SearchSection />
+      <WriteReviewSection />
       <FeaturesSection />
       <StatsSection />
       <TestimonialsSection />
