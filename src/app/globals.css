@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0A0C12;
+  --background: #2B103D;
   --foreground: #ffffff;
   --primary: #6574FF;
-  --secondary: #76828E;
-  --accent: #B8F60D;
-  --purple: #8103FC;
-  --card-bg: #0f1118;
+  --secondary: #B8F60D;
+  --accent: #8103FC;
+  --card-bg: #2B103D;
   --border-color: rgba(101, 116, 255, 0.3);
 }
 
@@ -17,7 +16,6 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  --color-purple: var(--purple);
   --color-card-bg: var(--card-bg);
   --font-sans: "Inter", Arial, Helvetica, sans-serif;
 }
@@ -56,7 +54,7 @@ body {
 
 /* Gradient backgrounds */
 .gradient-dark {
-  background: linear-gradient(180deg, #0A0C12 0%, #0f1118 50%, #0A0C12 100%);
+  background: linear-gradient(180deg, #2B103D 0%, #3d1a52 50%, #2B103D 100%);
 }
 
 .gradient-radial-dark {
@@ -69,7 +67,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0C12;
+  background: #2B103D;
 }
 
 ::-webkit-scrollbar-thumb {
