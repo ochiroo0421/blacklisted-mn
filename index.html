@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACKLISTED.MN - Ð¨ÑƒÐ´Ð°Ñ€Ð³Ð° Ñ‚Ò¯Ñ€ÑÑÑÐ¸Ð¹Ð½ Ð·Ð°Ñ… Ð·ÑÑÐ»</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00f0ff;
+            border-radius: 4px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .header-content {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 4px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 48px;
+        }
+
+        .nav a {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #00f0ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 600px;
+            height: 800px;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            transition: transform 0.1s ease-out;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 12px;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #00f0ff;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+        }
+
+        /* Search */
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 8px 24px;
+            background: #0a0a1a;
+            border: 1px solid rgba(0, 240, 255, 0.5);
+            border-radius: 16px;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            color: #00f0ff;
+        }
+
+        .search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 16px;
+            outline: none;
+            padding: 12px 0;
+        }
+
+        .search-input::placeholder {
+            color: rgba(0, 240, 255, 0.6);
+        }
+
+        .search-btn {
+            padding: 12px 32px;
+            background: #ff00ff;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            transition: all 0.3s;
+        }
+
+        .search-btn:hover {
+            background: rgba(255, 0, 255, 0.8);
+            transform: scale(1.02);
+        }
+
+        .search-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+        }
+
+        .toggle-btn {
+            padding: 10px 40px;
+            background: transparent;
+            border: none;
+            color: #00f0ff;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn.active {
+            background: #ff00ff;
+            color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            color: #00f0ff;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 60px;
+            background: #050508;
+        }
+
+        .stats-grid {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #a0a0a0;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 60px;
+            background: #000000;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            color: #ff00ff;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .testimonials-grid {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            padding: 32px;
+            background: #0a0a1a;
+            border-radius: 16px;
+            border: 1px solid;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .testimonial-text {
+            color: #ffffff;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .author-role {
+            color: #a0a0a0;
+            font-size: 13px;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 80px 60px;
+            background: #050508;
+        }
+
+        .contact-form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            padding: 40px;
+            background: #0a0a1a;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.15);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            color: #00f0ff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: #000000;
+            border: 1px solid rgba(0, 240, 255, 0.5);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            border-color: #00f0ff;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        .form-input::placeholder {
+            color: rgba(0, 240, 255, 0.4);
+        }
+
+        textarea.form-input {
+            resize: none;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: #00f0ff;
+            color: #000000;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: rgba(0, 240, 255, 0.8);
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        .footer {
+            background: #000000;
+            border-top: 1px solid rgba(0, 240, 255, 0.3);
+            padding: 60px;
+        }
+
+        .footer-content {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-left {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+        }
+
+        .footer-desc {
+            color: #00f0ff;
+            font-size: 14px;
+        }
+
+        .footer-columns {
+            display: flex;
+            gap: 60px;
+        }
+
+        .footer-column h3 {
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #00f0ff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #ff00ff;
+        }
+
+        .footer-bottom {
+            max-width: 1440px;
+            margin: 40px auto 0;
+            padding-top: 40px;
+            border-top: 1px solid rgba(0, 240, 255, 0.1);
+            text-align: center;
+            color: #a0a0a0;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 20px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 36px;
+                letter-spacing: 6px;
+            }
+
+            .hero-image-container {
+                width: 300px;
+                height: 400px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .stats, .testimonials, .contact, .footer {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">BLACKLISTED.MN</a>
+            <nav class="nav">
+                <a href="#home">ÐÒ®Ò®Ð </a>
+                <a href="#search">Ð¥ÐÐ™Ð›Ð¢</a>
+                <a href="#testimonials">Ð¡Ð­Ð¢Ð“Ð­Ð“Ð”Ð­Ð›</a>
+                <a href="#contact">Ð¥ÐžÐ›Ð‘ÐžÐž Ð‘ÐÐ Ð˜Ð¥</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-image-container">
+            <img src="lady-justice.jpg" alt="Lady Justice" class="hero-image" id="heroImage">
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">BLACKLISTED.MN</h1>
+            <p class="hero-subtitle">Ð¨ÑƒÐ´Ð°Ñ€Ð³Ð° Ñ‚Ò¯Ñ€ÑÑÑÐ¸Ð¹Ð½ Ð·Ð°Ñ… Ð·ÑÑÐ»</p>
+            
+            <div class="search-container">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <input type="text" class="search-input" placeholder="Ð¢Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»ÑÐ³Ñ‡Ð¸Ð¹Ð½ Ð½ÑÑ€, ÑƒÑ‚Ð°ÑÐ½Ñ‹ Ð´ÑƒÐ³Ð°Ð°Ñ€ ÑÑÐ²ÑÐ» Ð´Ò¯Ò¯Ñ€ÑÐ³...">
+                <button class="search-btn">Ð¥ÐÐ™Ð¥</button>
+            </div>
+            
+            <div class="search-toggle">
+                <button class="toggle-btn active" onclick="setSearchType(this, 'landlord')">Ð¢Ò®Ð Ð­Ð­Ð¡Ð›Ò®Ò®Ð›Ð­Ð“Ð§</button>
+                <button class="toggle-btn" onclick="setSearchType(this, 'tenant')">Ð¢Ò®Ð Ð­Ð­Ð¡Ð›Ð­Ð“Ð§</button>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value" style="color: #00f0ff; text-shadow: 0 0 20px rgba(0,240,255,0.5);">2,500+</div>
+                <div class="stat-label">Ð‘Ò¯Ñ€Ñ‚Ð³ÑÐ»Ñ‚ÑÐ¹ Ñ‚Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»ÑÐ³Ñ‡</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" style="color: #ff00ff; text-shadow: 0 0 20px rgba(255,0,255,0.5);">8,000+</div>
+                <div class="stat-label">Ð¡ÑÑ‚Ð³ÑÐ³Ð´ÑÐ»</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" style="color: #00ff88; text-shadow: 0 0 20px rgba(0,255,136,0.5);">95%</div>
+                <div class="stat-label">Ð‘Ð°Ñ‚Ð°Ð»Ð³Ð°Ð°Ð¶ÑÐ°Ð½ ÑÑÑ‚Ð³ÑÐ³Ð´ÑÐ»</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" style="color: #ffd700; text-shadow: 0 0 20px rgba(255,215,0,0.5);">50Mâ‚®</div>
+                <div class="stat-label">Ð¥Ð°Ð´Ð³Ð°Ð»Ð°Ð³Ð´ÑÐ°Ð½ Ð±Ð°Ñ€ÑŒÑ†Ð°Ð°</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <div class="section-label">Ð¡Ð­Ð¢Ð“Ð­Ð“Ð”Ð›Ò®Ò®Ð”</div>
+            <h2 class="section-title">Ð¥ÑÑ€ÑÐ³Ð»ÑÐ³Ñ‡Ð´Ð¸Ð¹Ð½ Ò¯Ð½ÑÐ½Ñ‡ ÑÑÑ‚Ð³ÑÐ³Ð´ÑÐ»</h2>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card" style="border-color: #00f0ff; box-shadow: 0 0 30px rgba(0,240,255,0.25);">
+                <p class="testimonial-text">"Ð­Ð½Ñ Ð¿Ð»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ð´ Ñ‚Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»ÑÐ³Ñ‡ÑÑÑÑÑ Ó©Ð¼Ð½Ó©Ñ… ÑÑÑ‚Ð³ÑÐ³Ð´ÑÐ» ÑƒÐ½ÑˆÐ¸Ð¶ Ñ‡Ð°Ð´ÑÐ°Ð½. Ð‘Ð°Ñ€ÑŒÑ†Ð°Ð° Ð¼Ó©Ð½Ð³Ó©Ó© Ð±ÑƒÑ†Ð°Ð°Ð¶ Ð°Ð²Ð°Ñ…Ð³Ò¯Ð¹ Ð±Ð°Ð¹ÑÐ°Ð½ Ñ‡ ÑÐ½Ð´ Ð±Ð¸Ñ‡ÑÑÐ½ ÑÑÑ‚Ð³ÑÐ³Ð´Ð»Ò¯Ò¯Ð´ÑÑÑ Ð±Ð¾Ð»Ð³Ð¾Ð¾Ð¼Ð¶Ð¸Ð»Ð¶ Ñ‡Ð°Ð´ÑÐ°Ð½."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background: #00f0ff;">Ð‘</div>
+                    <div>
+                        <div class="author-name">Ð‘Ð°Ñ‚</div>
+                        <div class="author-role">Ð¢Ò¯Ñ€ÑÑÑÐ»ÑÐ³Ñ‡</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card" style="border-color: #ff00ff; box-shadow: 0 0 30px rgba(255,0,255,0.25);">
+                <p class="testimonial-text">"Ð‘Ð¸ 10 Ð¶Ð¸Ð»Ð¸Ð¹Ð½ Ñ‚ÑƒÑ€Ñˆ Ñ‚Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»Ð¶ Ð±Ð°Ð¹Ð½Ð°. Ð¥ÑƒÑƒÑ€Ð°Ð¼Ñ‡ ÑÑÑ‚Ð³ÑÐ³Ð´ÑÐ»Ð´ Ó©Ñ€Ñ‚Ó©Ñ… Ð²Ð¸Ð¹ Ð³ÑÐ¶ Ð°Ð¹Ð´Ð°Ð³ Ð±Ð¾Ð» ÑÐ½Ð´ Ñ…Ð°Ñ€Ð¸Ñƒ Ð±Ð¸Ñ‡Ð¸Ñ… Ð±Ð¾Ð»Ð¾Ð¼Ð¶Ñ‚Ð¾Ð¹."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background: #ff00ff;">Ð”</div>
+                    <div>
+                        <div class="author-name">Ð”Ð¾Ñ€Ð¶</div>
+                        <div class="author-role">Ð¢Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»ÑÐ³Ñ‡</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card" style="border-color: #00ff88; box-shadow: 0 0 30px rgba(0,255,136,0.25);">
+                <p class="testimonial-text">"Ð¥Ð¾Ñ…Ð¸Ñ€Ð¾Ð³Ñ‡Ð¸Ð´ Ð·Ó©Ð²Ð»Ó©Ð³Ó©Ó© Ó©Ð³Ó©Ñ…Ð´Ó©Ó© Ð¿Ð»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼ Ð´ÑÑÑ€Ñ… Ð¼ÑÐ´ÑÑÐ»Ð»ÑÑÑ€ Ñ…ÑƒÑƒÐ»Ð¸Ð¹Ð½ Ñ…ÑÑ€ÑÐ³ Ð±Ò¯Ñ€Ð´Ò¯Ò¯Ð»ÑÑ…ÑÐ´ Ð¼Ð°Ñˆ Ð¸Ñ… Ñ‚ÑƒÑ Ð±Ð¾Ð»Ð´Ð¾Ð³."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background: #00ff88;">Ð¡</div>
+                    <div>
+                        <div class="author-name">Ð¡Ð°Ñ€Ð°Ð°</div>
+                        <div class="author-role">Ð¥ÑƒÑƒÐ»ÑŒÑ‡</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <div class="section-label">Ð¥ÐžÐ›Ð‘ÐžÐž Ð‘ÐÐ Ð˜Ð¥</div>
+            <h2 class="section-title">Ð‘Ð¸Ð´ÑÐ½Ñ‚ÑÐ¹ Ñ…Ð¾Ð»Ð±Ð¾Ð³Ð´Ð¾Ñ…</h2>
+        </div>
+        
+        <div class="contact-form-wrapper">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('ÐœÐµÑÑÐµÐ¶ Ð¸Ð»Ð³ÑÑÐ³Ð´Ð»ÑÑ!');">
+                <div class="form-group">
+                    <label class="form-label">ÐÐ­Ð </label>
+                    <input type="text" class="form-input" placeholder="Ð¢Ð°Ð½Ñ‹ Ð½ÑÑ€" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Ð˜-ÐœÐ­Ð™Ð›</label>
+                    <input type="email" class="form-input" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Ð£Ð¢ÐÐ¡</label>
+                    <input type="tel" class="form-input" placeholder="+976 XX XX XX XX">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">ÐœÐ•Ð¡Ð¡Ð•Ð–</label>
+                    <textarea class="form-input" placeholder="Ð¢Ð°Ð½Ñ‹ Ð¼ÐµÑÑÐµÐ¶..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Ð˜Ð›Ð“Ð­Ð­Ð¥</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">BLACKLISTED.MN</div>
+                <p class="footer-desc">ÐœÐ¾Ð½Ð³Ð¾Ð»Ñ‹Ð½ Ñ‚Ò¯Ñ€ÑÑÑÐ¸Ð¹Ð½ Ð·Ð°Ñ… Ð·ÑÑÐ»Ð´ ÑˆÑƒÐ´Ð°Ñ€Ð³Ð° Ð±Ð°Ð¹Ð´Ð»Ñ‹Ð³ Ð±Ð¸Ð¹ Ð±Ð¾Ð»Ð³Ð¾Ñ…</p>
+            </div>
+            
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Ð¥Ð£Ð£Ð”ÐÐ¡</h3>
+                    <ul>
+                        <li><a href="#home">ÐÒ¯Ò¯Ñ€</a></li>
+                        <li><a href="#search">Ð¥Ð°Ð¹Ð»Ñ‚</a></li>
+                        <li><a href="#testimonials">Ð¡ÑÑ‚Ð³ÑÐ³Ð´ÑÐ» Ð±Ð¸Ñ‡Ð¸Ñ…</a></li>
+                        <li><a href="#about">Ð‘Ð¸Ð´Ð½Ð¸Ð¹ Ñ‚ÑƒÑ…Ð°Ð¹</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Ð¥Ð£Ð£Ð›Ð¬ Ð­Ð Ð¥ Ð—Ò®Ð™</h3>
+                    <ul>
+                        <li><a href="#privacy">ÐÑƒÑƒÑ†Ð»Ð°Ð»</a></li>
+                        <li><a href="#terms">Ò®Ð¹Ð»Ñ‡Ð¸Ð»Ð³ÑÑÐ½Ð¸Ð¹ Ð½Ó©Ñ…Ñ†Ó©Ð»</a></li>
+                        <li><a href="#laws">Ð¥ÑƒÑƒÐ»ÑŒ Ñ‚Ð¾Ð³Ñ‚Ð¾Ð¾Ð¼Ð¶</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            Â© 2026 BLACKLISTED.MN. Ð‘Ò¯Ñ… ÑÑ€Ñ… Ñ…ÑƒÑƒÐ»Ð¸Ð°Ñ€ Ñ…Ð°Ð¼Ð³Ð°Ð°Ð»Ð°Ð³Ð´ÑÐ°Ð½.
+        </div>
+    </footer>
+
+    <script>
+        // Search type toggle
+        function setSearchType(btn, type) {
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        // Scroll-based Lady Justice zoom effect
+        const heroImage = document.getElementById('heroImage');
+        const heroSection = document.querySelector('.hero');
+        
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const heroHeight = heroSection.offsetHeight;
+            const scrollProgress = Math.min(scrollY / (heroHeight * 0.5), 1);
+            
+            if (scrollProgress <= 1) {
+                // Zoom in effect
+                const scale = 1 + (scrollProgress * 0.5);
+                const translateY = scrollProgress * -50;
+                heroImage.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+                
+                // Fade out at end
+                if (scrollProgress > 0.7) {
+                    heroImage.style.opacity = 1 - ((scrollProgress - 0.7) / 0.3);
+                } else {
+                    heroImage.style.opacity = 1;
+                }
+            }
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
