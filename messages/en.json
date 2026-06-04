@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "search": "Search",
+    "testimonials": "Reviews",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "BLACKLISTED.MN",
+    "subtitle": "Fair Rental Market",
+    "searchPlaceholder": "Landlord name, phone number or district...",
+    "searchButton": "SEARCH",
+    "landlord": "LANDLORD",
+    "tenant": "TENANT"
+  },
+  "stats": {
+    "landlords": "Registered Landlords",
+    "reviews": "Reviews",
+    "verified": "Verified Reviews",
+    "saved": "Saved Deposits"
+  },
+  "testimonials": {
+    "label": "TESTIMONIALS",
+    "title": "Honest User Reviews"
+  },
+  "contact": {
+    "label": "CONTACT",
+    "title": "Get in Touch",
+    "name": "NAME",
+    "namePlaceholder": "Your name",
+    "email": "EMAIL",
+    "emailPlaceholder": "your@email.com",
+    "phone": "PHONE",
+    "phonePlaceholder": "+976 XX XX XX XX",
+    "message": "MESSAGE",
+    "messagePlaceholder": "Your message...",
+    "submit": "SEND"
+  },
+  "footer": {
+    "description": "Building fairness in Mongolia's rental market",
+    "pages": "PAGES",
+    "legal": "LEGAL",
+    "rights": "Â© 2026 BLACKLISTED.MN. All rights reserved."
+  }
+}
