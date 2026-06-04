@@ -3,11 +3,12 @@
 :root {
   --background: #0A0C12;
   --foreground: #ffffff;
-  --primary: #023661;
+  --primary: #6574FF;
   --secondary: #76828E;
-  --accent: #DB5227;
+  --accent: #B8F60D;
+  --purple: #8103FC;
   --card-bg: #0f1118;
-  --border-color: rgba(2, 54, 97, 0.5);
+  --border-color: rgba(101, 116, 255, 0.3);
 }
 
 @theme inline {
@@ -16,6 +17,7 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+  --color-purple: var(--purple);
   --color-card-bg: var(--card-bg);
   --font-sans: "Inter", Arial, Helvetica, sans-serif;
 }
@@ -26,26 +28,30 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Neon glow effects - orange-red accent */
+/* Neon glow effects */
 .neon-glow-accent {
-  box-shadow: 0 0 10px rgba(219, 82, 39, 0.5), 0 0 30px rgba(219, 82, 39, 0.3), 0 0 60px rgba(219, 82, 39, 0.15);
+  box-shadow: 0 0 10px rgba(184, 246, 13, 0.5), 0 0 30px rgba(184, 246, 13, 0.3), 0 0 60px rgba(184, 246, 13, 0.15);
 }
 
 .neon-glow-primary {
-  box-shadow: 0 0 10px rgba(2, 54, 97, 0.6), 0 0 30px rgba(2, 54, 97, 0.4), 0 0 60px rgba(2, 54, 97, 0.2);
+  box-shadow: 0 0 10px rgba(101, 116, 255, 0.5), 0 0 30px rgba(101, 116, 255, 0.3), 0 0 60px rgba(101, 116, 255, 0.15);
 }
 
-.neon-glow-secondary {
-  box-shadow: 0 0 10px rgba(118, 130, 142, 0.4), 0 0 30px rgba(118, 130, 142, 0.2);
+.neon-glow-purple {
+  box-shadow: 0 0 10px rgba(129, 3, 252, 0.5), 0 0 30px rgba(129, 3, 252, 0.3), 0 0 60px rgba(129, 3, 252, 0.15);
 }
 
 /* Text glow */
 .text-glow-accent {
-  text-shadow: 0 0 10px rgba(219, 82, 39, 0.8), 0 0 20px rgba(219, 82, 39, 0.5), 0 0 40px rgba(219, 82, 39, 0.3);
+  text-shadow: 0 0 10px rgba(184, 246, 13, 0.8), 0 0 20px rgba(184, 246, 13, 0.5), 0 0 40px rgba(184, 246, 13, 0.3);
 }
 
 .text-glow-primary {
-  text-shadow: 0 0 10px rgba(2, 54, 97, 0.8), 0 0 20px rgba(2, 54, 97, 0.5);
+  text-shadow: 0 0 10px rgba(101, 116, 255, 0.8), 0 0 20px rgba(101, 116, 255, 0.5), 0 0 40px rgba(101, 116, 255, 0.3);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 10px rgba(129, 3, 252, 0.8), 0 0 20px rgba(129, 3, 252, 0.5), 0 0 40px rgba(129, 3, 252, 0.3);
 }
 
 /* Gradient backgrounds */
@@ -54,7 +60,7 @@ body {
 }
 
 .gradient-radial-dark {
-  background: radial-gradient(ellipse at center, rgba(2, 54, 97, 0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(101, 116, 255, 0.1) 0%, transparent 70%);
 }
 
 /* Custom scrollbar */
@@ -67,12 +73,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #023661;
+  background: #6574FF;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #DB5227;
+  background: #B8F60D;
 }
 
 /* Smooth scrolling */
