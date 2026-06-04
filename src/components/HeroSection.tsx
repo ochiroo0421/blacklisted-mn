@@ -10,12 +10,27 @@ if (typeof window !== "undefined") {
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const ladyJusticeRef = useRef<HTMLImageElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const ctx = gsap.context(() => {
+      // Blur and fade Lady Justice on scroll
+      gsap.to(ladyJusticeRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=80%",
+          scrub: 1,
+        },
+        filter: "blur(20px) brightness(0.3)",
+        opacity: 0,
+        scale: 1.1,
+        ease: "power2.inOut",
+      });
+
       // Fade out content on scroll
       gsap.to(contentRef.current, {
         scrollTrigger: {
@@ -48,15 +63,16 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
+      <div className="relative z-10 flex min-h-screen">
+        
         <div
           ref={contentRef}
-          className="text-center max-w-4xl mx-auto pt-20"
+          className="w-[38.2%] flex flex-col justify-center px-12 md:px-20 pt-20"
           style={{ willChange: "transform, opacity" }}
         >
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] tracking-tight">
                 Ð¢ÐÐÐ« Ð¥ÐÐ ÐÐÐ“Ò®Ð™
                 <br />
                 <span className="text-[#DB5227] text-glow-accent">Ð—Ò®Ð™Ð›Ð¡ Ð‘ÐÐ™Ð“ÐÐ</span>
@@ -65,28 +81,56 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            <p className="text-xl text-[#76828E] max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-[#76828E] max-w-md leading-relaxed">
               Ð¢Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»ÑÐ³Ñ‡ Ð±Ð¾Ð»Ð¾Ð½ Ñ‚Ò¯Ñ€ÑÑÑÐ»ÑÐ³Ñ‡Ð´Ð¸Ð¹Ð½ Ò¯Ð½ÑÐ½Ñ‡ ÑÑÑ‚Ð³ÑÐ³Ð´ÑÐ»Ð´ Ñ‚ÑƒÐ»Ð³ÑƒÑƒÑ€Ð»Ð°Ð½ 
               ÑˆÑƒÐ´Ð°Ñ€Ð³Ð° Ñ‚Ò¯Ñ€ÑÑÑÐ¸Ð¹Ð½ Ð·Ð°Ñ… Ð·ÑÑÐ»Ð¸Ð¹Ð³ Ð±Ð¸Ð¹ Ð±Ð¾Ð»Ð³Ð¾Ð½Ð¾
             </p>
 
-            <div className="flex items-center justify-center gap-8 pt-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#DB5227]">2,500+</div>
-                <div className="text-xs text-[#76828E] tracking-[1px] mt-1">Ð‘Ò¯Ñ€Ñ‚Ð³ÑÐ»Ñ‚ÑÐ¹</div>
+            <div className="flex items-center gap-6 pt-6 border-t border-[#023661]/30">
+              <div>
+                <div className="text-2xl font-bold text-[#DB5227]">2,500+</div>
+                <div className="text-xs text-[#76828E] tracking-[1px]">Ð‘Ò¯Ñ€Ñ‚Ð³ÑÐ»Ñ‚ÑÐ¹</div>
               </div>
-              <div className="w-px h-12 bg-[#023661]/50" />
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#023661]">8,000+</div>
-                <div className="text-xs text-[#76828E] tracking-[1px] mt-1">Ð¡ÑÑ‚Ð³ÑÐ³Ð´ÑÐ»</div>
+              <div className="w-px h-10 bg-[#023661]/50" />
+              <div>
+                <div className="text-2xl font-bold text-[#023661]">8,000+</div>
+                <div className="text-xs text-[#76828E] tracking-[1px]">Ð¡ÑÑ‚Ð³ÑÐ³Ð´ÑÐ»</div>
               </div>
-              <div className="w-px h-12 bg-[#023661]/50" />
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#76828E]">95%</div>
-                <div className="text-xs text-[#76828E] tracking-[1px] mt-1">Ð˜Ñ‚Ð³ÑÐ»Ñ†ÑÐ»</div>
+              <div className="w-px h-10 bg-[#023661]/50" />
+              <div>
+                <div className="text-2xl font-bold text-[#76828E]">95%</div>
+                <div className="text-xs text-[#76828E] tracking-[1px]">Ð˜Ñ‚Ð³ÑÐ»Ñ†ÑÐ»</div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="w-[61.8%] relative flex items-center justify-center">
+          <div 
+            className="absolute w-[80%] h-[80%] rounded-full opacity-20"
+            style={{
+              background: 'radial-gradient(circle, rgba(219, 82, 39, 0.4) 0%, transparent 70%)',
+              filter: 'blur(60px)'
+            }}
+          />
+
+          <img
+            ref={ladyJusticeRef}
+            src="/lady-justice.jpg"
+            alt="Lady Justice"
+            className="absolute w-full h-full object-contain object-center"
+            style={{
+              willChange: "transform, opacity, filter",
+              mixBlendMode: "lighten",
+              filter: "contrast(1.2) brightness(1.1)",
+              maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
+            }}
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0C12] via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0A0C12] to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-[#0A0C12] to-transparent" />
         </div>
       </div>
 
