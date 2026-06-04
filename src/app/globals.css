@@ -1,23 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
+  --background: #0A0C12;
   --foreground: #ffffff;
-  --neon-cyan: #00f0ff;
-  --neon-pink: #ff00ff;
-  --neon-green: #00ff88;
-  --neon-gold: #ffd700;
-  --card-bg: #0a0a1a;
-  --border-color: rgba(0, 240, 255, 0.2);
+  --primary: #023661;
+  --secondary: #76828E;
+  --accent: #DB5227;
+  --card-bg: #0f1118;
+  --border-color: rgba(2, 54, 97, 0.5);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-neon-cyan: var(--neon-cyan);
-  --color-neon-pink: var(--neon-pink);
-  --color-neon-green: var(--neon-green);
-  --color-neon-gold: var(--neon-gold);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
   --color-card-bg: var(--card-bg);
   --font-sans: "Inter", Arial, Helvetica, sans-serif;
 }
@@ -28,32 +26,35 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Neon glow effects */
-.neon-glow-cyan {
-  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 30px rgba(0, 240, 255, 0.3);
+/* Neon glow effects - orange-red accent */
+.neon-glow-accent {
+  box-shadow: 0 0 10px rgba(219, 82, 39, 0.5), 0 0 30px rgba(219, 82, 39, 0.3), 0 0 60px rgba(219, 82, 39, 0.15);
 }
 
-.neon-glow-pink {
-  box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 30px rgba(255, 0, 255, 0.3);
+.neon-glow-primary {
+  box-shadow: 0 0 10px rgba(2, 54, 97, 0.6), 0 0 30px rgba(2, 54, 97, 0.4), 0 0 60px rgba(2, 54, 97, 0.2);
 }
 
-.neon-glow-green {
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 30px rgba(0, 255, 136, 0.3);
+.neon-glow-secondary {
+  box-shadow: 0 0 10px rgba(118, 130, 142, 0.4), 0 0 30px rgba(118, 130, 142, 0.2);
 }
 
 /* Text glow */
-.text-glow-cyan {
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.5);
+.text-glow-accent {
+  text-shadow: 0 0 10px rgba(219, 82, 39, 0.8), 0 0 20px rgba(219, 82, 39, 0.5), 0 0 40px rgba(219, 82, 39, 0.3);
 }
 
-.text-glow-pink {
-  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.5);
+.text-glow-primary {
+  text-shadow: 0 0 10px rgba(2, 54, 97, 0.8), 0 0 20px rgba(2, 54, 97, 0.5);
 }
 
-/* Gradient fade for Lady Justice */
-.gradient-fade-bottom {
-  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+/* Gradient backgrounds */
+.gradient-dark {
+  background: linear-gradient(180deg, #0A0C12 0%, #0f1118 50%, #0A0C12 100%);
+}
+
+.gradient-radial-dark {
+  background: radial-gradient(ellipse at center, rgba(2, 54, 97, 0.15) 0%, transparent 70%);
 }
 
 /* Custom scrollbar */
@@ -62,16 +63,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #0A0C12;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00f0ff;
+  background: #023661;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff00ff;
+  background: #DB5227;
 }
 
 /* Smooth scrolling */
