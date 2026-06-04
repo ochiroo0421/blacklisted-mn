@@ -18,9 +18,11 @@ export default function SearchPage() {
           </p>
         </div>
 
-        {/* Search */}
         <div className="max-w-[700px] mx-auto mb-12">
-          <div className="flex items-center gap-4 p-2 rounded-2xl bg-[#0a0a1a] border border-[#00f0ff]/50">
+          <div className="flex items-center gap-4 p-2 rounded-2xl bg-[#0a0a1a] border border-[#00f0ff]/50 neon-glow-cyan">
+            <svg className="w-5 h-5 text-[#00f0ff] ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
             <input
               type="text"
               value={searchQuery}
@@ -28,7 +30,7 @@ export default function SearchPage() {
               placeholder="Ð¥Ð°Ð¹Ñ…..."
               className="flex-1 bg-transparent text-white placeholder-[#00f0ff]/60 outline-none px-3 py-3"
             />
-            <button className="px-8 py-3 bg-[#ff00ff] text-white font-bold text-sm tracking-[2px] rounded-xl">
+            <button className="px-8 py-3 bg-[#ff00ff] text-white font-bold text-sm tracking-[2px] rounded-xl neon-glow-pink hover:bg-[#ff00ff]/80 transition-colors">
               Ð¥ÐÐ™Ð¥
             </button>
           </div>
@@ -39,7 +41,7 @@ export default function SearchPage() {
                 onClick={() => setSearchType("landlord")}
                 className={`px-8 py-2 rounded-lg text-sm font-bold tracking-[1px] transition-all ${
                   searchType === "landlord"
-                    ? "bg-[#ff00ff] text-white"
+                    ? "bg-[#ff00ff] text-white neon-glow-pink"
                     : "text-[#00f0ff]"
                 }`}
               >
@@ -49,7 +51,7 @@ export default function SearchPage() {
                 onClick={() => setSearchType("tenant")}
                 className={`px-8 py-2 rounded-lg text-sm font-bold tracking-[1px] transition-all ${
                   searchType === "tenant"
-                    ? "bg-[#ff00ff] text-white"
+                    ? "bg-[#ff00ff] text-white neon-glow-pink"
                     : "text-[#00f0ff]"
                 }`}
               >
@@ -59,7 +61,6 @@ export default function SearchPage() {
           </div>
         </div>
 
-        {/* Results placeholder */}
         <div className="text-center text-[#a0a0a0]">
           <p>Ð¥Ð°Ð¹Ð»Ñ‚Ð°Ð° ÑÑ…Ð»Ò¯Ò¯Ð»ÑÑ…Ð¸Ð¹Ð½ Ñ‚ÑƒÐ»Ð´ Ð´ÑÑÑ€Ñ… Ñ‚Ð°Ð»Ð±Ð°Ñ€Ñ‚ Ð±Ð¸Ñ‡Ð½Ñ Ò¯Ò¯</p>
         </div>
