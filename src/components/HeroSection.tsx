@@ -50,9 +50,8 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       className="relative min-h-screen overflow-hidden"
-      style={{ background: '#0A0C12' }}
+      style={{ background: '#2B103D' }}
     >
-      {/* Futuristic background */}
       <div 
         className="absolute inset-0"
         style={{
@@ -68,7 +67,6 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Floating orbs */}
       <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #6574FF 0%, transparent 70%)', filter: 'blur(80px)' }} />
       <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #8103FC 0%, transparent 70%)', filter: 'blur(100px)' }} />
       <div className="absolute top-1/2 right-1/3 w-48 h-48 rounded-full opacity-5" style={{ background: 'radial-gradient(circle, #B8F60D 0%, transparent 70%)', filter: 'blur(60px)' }} />
@@ -85,13 +83,13 @@ export default function HeroSection() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.15] tracking-tight">
                 Ð¢ÐÐÐ« Ð¥ÐÐ ÐÐÐ“Ò®Ð™
                 <br />
-                <span className="text-[#B8F60D]" style={{ textShadow: '0 0 20px rgba(184, 246, 13, 0.5)' }}>Ð—Ò®Ð™Ð›Ð¡ Ð‘ÐÐ™Ð“ÐÐ</span>
+                <span className="text-[#B8F60D]">Ð—Ò®Ð™Ð›Ð¡ Ð‘ÐÐ™Ð“ÐÐ</span>
                 <br />
                 <span className="text-[#6574FF]">Ð§ Ð®Ðœ Ð‘Ð˜Ð›Ò®Ò®?</span>
               </h1>
             </div>
 
-            <p className="text-base text-[#76828E] max-w-md leading-relaxed">
+            <p className="text-base text-white/60 max-w-md leading-relaxed">
               Ð¢Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»ÑÐ³Ñ‡ Ð±Ð¾Ð»Ð¾Ð½ Ñ‚Ò¯Ñ€ÑÑÑÐ»ÑÐ³Ñ‡Ð´Ð¸Ð¹Ð½ Ò¯Ð½ÑÐ½Ñ‡ ÑÑÑ‚Ð³ÑÐ³Ð´ÑÐ»Ð´ Ñ‚ÑƒÐ»Ð³ÑƒÑƒÑ€Ð»Ð°Ð½ 
               ÑˆÑƒÐ´Ð°Ñ€Ð³Ð° Ñ‚Ò¯Ñ€ÑÑÑÐ¸Ð¹Ð½ Ð·Ð°Ñ… Ð·ÑÑÐ»Ð¸Ð¹Ð³ Ð±Ð¸Ð¹ Ð±Ð¾Ð»Ð³Ð¾Ð½Ð¾
             </p>
@@ -99,17 +97,17 @@ export default function HeroSection() {
             <div className="flex items-center gap-6 pt-4 border-t border-[#6574FF]/20">
               <div>
                 <div className="text-xl font-bold text-[#B8F60D]">2,500+</div>
-                <div className="text-xs text-[#76828E] tracking-[1px]">Ð‘Ò¯Ñ€Ñ‚Ð³ÑÐ»Ñ‚ÑÐ¹</div>
+                <div className="text-xs text-white/40 tracking-[1px]">Ð‘Ò¯Ñ€Ñ‚Ð³ÑÐ»Ñ‚ÑÐ¹</div>
               </div>
               <div className="w-px h-8 bg-[#6574FF]/30" />
               <div>
                 <div className="text-xl font-bold text-[#6574FF]">8,000+</div>
-                <div className="text-xs text-[#76828E] tracking-[1px]">Ð¡ÑÑ‚Ð³ÑÐ³Ð´ÑÐ»</div>
+                <div className="text-xs text-white/40 tracking-[1px]">Ð¡ÑÑ‚Ð³ÑÐ³Ð´ÑÐ»</div>
               </div>
               <div className="w-px h-8 bg-[#6574FF]/30" />
               <div>
                 <div className="text-xl font-bold text-[#8103FC]">95%</div>
-                <div className="text-xs text-[#76828E] tracking-[1px]">Ð˜Ñ‚Ð³ÑÐ»Ñ†ÑÐ»</div>
+                <div className="text-xs text-white/40 tracking-[1px]">Ð˜Ñ‚Ð³ÑÐ»Ñ†ÑÐ»</div>
               </div>
             </div>
           </div>
@@ -138,14 +136,14 @@ export default function HeroSection() {
             }}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0C12] via-transparent to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0A0C12] to-transparent" />
-          <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-[#0A0C12] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2B103D] via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#2B103D] to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-[#2B103D] to-transparent" />
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
-        <span className="text-[#76828E] text-xs tracking-[2px]">Ð”ÐžÐžÐ¨ Ð“Ò®Ð™Ð›Ð“Ð­Ð­Ð Ð­Ð™</span>
+        <span className="text-white/40 text-xs tracking-[2px]">Ð”ÐžÐžÐ¨ Ð“Ò®Ð™Ð›Ð“Ð­Ð­Ð Ð­Ð™</span>
         <div className="animate-bounce">
           <svg className="w-6 h-6 text-[#B8F60D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -153,7 +151,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A0C12] to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#2B103D] to-transparent z-10" />
     </section>
   );
 }
