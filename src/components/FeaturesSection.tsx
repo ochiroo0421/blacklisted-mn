@@ -12,7 +12,7 @@ const features = [
     ),
     title: "Ð‘Ð°Ñ‚Ð°Ð»Ð³Ð°Ð°Ð¶ÑÐ°Ð½ ÑÑÑ‚Ð³ÑÐ³Ð´ÑÐ»",
     description: "Ð‘Ò¯Ñ… ÑÑÑ‚Ð³ÑÐ³Ð´ÑÐ» Ð±Ð°Ñ‚Ð°Ð»Ð³Ð°Ð°Ð¶ÑƒÑƒÐ»ÑÐ°Ð½ Ñ‚Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»ÑÐ³Ñ‡ Ð±Ð¾Ð»Ð¾Ð½ Ñ‚Ò¯Ñ€ÑÑÑÐ»ÑÐ³Ñ‡Ð´ÑÑÑ Ð¸Ñ€Ð´ÑÐ³. Ð¥ÑƒÑƒÑ€Ð°Ð¼Ñ‡ Ð¼ÑÐ´ÑÑÐ»ÑÐ»Ð³Ò¯Ð¹.",
-    color: "#B8F60D",
+    color: "#DED1C6",
   },
   {
     icon: (
@@ -22,7 +22,7 @@ const features = [
     ),
     title: "Ð¥ÑÐ»Ð±Ð°Ñ€ Ñ…Ð°Ð¹Ð»Ñ‚",
     description: "ÐÑÑ€, ÑƒÑ‚Ð°Ñ, Ñ…Ð°ÑÐ³Ð°Ð°Ñ€ Ñ‚Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»ÑÐ³Ñ‡ Ð±Ð¾Ð»Ð¾Ð½ Ñ‚Ò¯Ñ€ÑÑÑÐ»ÑÐ³Ñ‡Ð¸Ð¹Ð³ Ñ…Ð°Ð¹Ð¶, Ð±ÑƒÑÐ´Ñ‹Ð½ Ñ‚ÑƒÑ€ÑˆÐ»Ð°Ð³Ñ‹Ð³ Ñ…Ð°Ñ€Ð°Ñ… Ð±Ð¾Ð»Ð¾Ð¼Ð¶Ñ‚Ð¾Ð¹.",
-    color: "#6574FF",
+    color: "#174871",
   },
   {
     icon: (
@@ -32,7 +32,7 @@ const features = [
     ),
     title: "Ð¥Ð°Ñ€Ð¸Ñƒ Ð±Ð¸Ñ‡Ð¸Ñ… Ð±Ð¾Ð»Ð¾Ð¼Ð¶",
     description: "Ð¢Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»ÑÐ³Ñ‡Ð¸Ð´ ÑÑÑ‚Ð³ÑÐ³Ð´ÑÐ»Ð´ Ñ…Ð°Ñ€Ð¸Ñƒ Ð±Ð¸Ñ‡Ð¸Ñ…, Ñ‚Ð°Ð¹Ð»Ð±Ð°Ñ€ Ó©Ð³Ó©Ñ… Ð±Ð¾Ð»Ð¾Ð¼Ð¶Ñ‚Ð¾Ð¹. Ð¥Ð¾Ñ‘Ñ€ Ñ‚Ð°Ð»Ñ‹Ð½ Ò¯Ð·ÑÐ» Ð±Ð¾Ð´Ð»Ñ‹Ð³ ÑÐ¾Ð½ÑÐ¾Ð½Ð¾.",
-    color: "#8103FC",
+    color: "#A77693",
   },
   {
     icon: (
@@ -42,7 +42,7 @@ const features = [
     ),
     title: "Ð˜Ð» Ñ‚Ð¾Ð´ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸Ðº",
     description: "Ð‘Ò¯Ñ€Ñ‚Ð³ÑÐ»Ñ‚ÑÐ¹ Ñ‚Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»ÑÐ³Ñ‡Ð´Ð¸Ð¹Ð½ Ò¯Ð½ÑÐ»Ð³ÑÑ, ÑÑÑ‚Ð³ÑÐ³Ð´Ð»Ð¸Ð¹Ð½ Ñ‚Ð¾Ð¾, Ð±Ð°Ñ‚Ð°Ð»Ð³Ð°Ð°Ð¶ÑÐ°Ð½ Ð¼ÑÐ´ÑÑÐ»Ð»Ð¸Ð¹Ð³ Ñ…Ð°Ñ€Ð°Ñ… Ð±Ð¾Ð»Ð¾Ð¼Ð¶Ñ‚Ð¾Ð¹.",
-    color: "#B8F60D",
+    color: "#DED1C6",
   },
 ];
 
@@ -55,7 +55,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative p-8 rounded-2xl bg-[#2B103D] border border-[#6574FF]/20 hover:border-[#B8F60D]/40 transition-all group"
+      className="relative p-8 rounded-2xl bg-[#0F2D4D] border border-[#174871]/30 hover:border-[#A77693]/40 transition-all group"
     >
       <div 
         className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-colors"
@@ -65,7 +65,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
       </div>
       
       <h3 className="text-white text-lg font-bold mb-3">{feature.title}</h3>
-      <p className="text-white/50 text-sm leading-relaxed">{feature.description}</p>
+      <p className="text-[#DED1C6]/50 text-sm leading-relaxed">{feature.description}</p>
       
       <div 
         className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-0 group-hover:opacity-10 transition-opacity"
@@ -77,18 +77,18 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
 
 export default function FeaturesSection() {
   return (
-    <section className="py-24 relative" style={{ background: '#2B103D' }}>
+    <section className="py-24 relative" style={{ background: '#0F2D4D' }}>
       <div className="absolute inset-0 gradient-radial-dark" />
       
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-[60px]">
         <div className="text-center mb-16 space-y-4">
-          <div className="text-[#B8F60D] text-[13px] font-semibold tracking-[4px]">
+          <div className="text-[#DED1C6] text-[13px] font-semibold tracking-[4px]">
             Ð‘ÐžÐ›ÐžÐœÐ–Ð£Ð£Ð”
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white">
             Ð¯Ð°Ð³Ð°Ð°Ð´ BLACKLISTED.MN?
           </h2>
-          <p className="text-white/60 max-w-lg mx-auto">
+          <p className="text-[#DED1C6]/60 max-w-lg mx-auto">
             ÐœÐ¾Ð½Ð³Ð¾Ð»Ñ‹Ð½ Ñ‚Ò¯Ñ€ÑÑÑÐ¸Ð¹Ð½ Ð·Ð°Ñ… Ð·ÑÑÐ»Ð´ Ð¸Ñ‚Ð³ÑÐ»Ñ†ÑÐ», Ð¸Ð» Ñ‚Ð¾Ð´ Ð±Ð°Ð¹Ð´Ð»Ñ‹Ð³ Ð±Ð¸Ð¹ Ð±Ð¾Ð»Ð³Ð¾Ñ… Ð·Ð¾Ñ€Ð¸Ð»Ð³Ð¾Ñ‚Ð¾Ð¹
           </p>
         </div>
