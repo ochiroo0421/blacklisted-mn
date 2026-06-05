@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #2B103D;
+  --background: #0F2D4D;
   --foreground: #ffffff;
-  --primary: #6574FF;
-  --secondary: #B8F60D;
-  --accent: #8103FC;
-  --card-bg: #2B103D;
-  --border-color: rgba(101, 116, 255, 0.3);
+  --primary: #174871;
+  --secondary: #A77693;
+  --accent: #DED1C6;
+  --card-bg: #174871;
+  --border-color: rgba(23, 72, 113, 0.5);
 }
 
 @theme inline {
@@ -26,39 +26,39 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Neon glow effects */
+/* Glow effects */
 .neon-glow-accent {
-  box-shadow: 0 0 10px rgba(184, 246, 13, 0.5), 0 0 30px rgba(184, 246, 13, 0.3), 0 0 60px rgba(184, 246, 13, 0.15);
+  box-shadow: 0 0 10px rgba(222, 209, 198, 0.4), 0 0 30px rgba(222, 209, 198, 0.2), 0 0 60px rgba(222, 209, 198, 0.1);
 }
 
 .neon-glow-primary {
-  box-shadow: 0 0 10px rgba(101, 116, 255, 0.5), 0 0 30px rgba(101, 116, 255, 0.3), 0 0 60px rgba(101, 116, 255, 0.15);
+  box-shadow: 0 0 10px rgba(23, 72, 113, 0.5), 0 0 30px rgba(23, 72, 113, 0.3), 0 0 60px rgba(23, 72, 113, 0.15);
 }
 
-.neon-glow-purple {
-  box-shadow: 0 0 10px rgba(129, 3, 252, 0.5), 0 0 30px rgba(129, 3, 252, 0.3), 0 0 60px rgba(129, 3, 252, 0.15);
+.neon-glow-secondary {
+  box-shadow: 0 0 10px rgba(167, 118, 147, 0.4), 0 0 30px rgba(167, 118, 147, 0.2), 0 0 60px rgba(167, 118, 147, 0.1);
 }
 
 /* Text glow */
 .text-glow-accent {
-  text-shadow: 0 0 10px rgba(184, 246, 13, 0.8), 0 0 20px rgba(184, 246, 13, 0.5), 0 0 40px rgba(184, 246, 13, 0.3);
+  text-shadow: 0 0 10px rgba(222, 209, 198, 0.6), 0 0 20px rgba(222, 209, 198, 0.4), 0 0 40px rgba(222, 209, 198, 0.2);
 }
 
 .text-glow-primary {
-  text-shadow: 0 0 10px rgba(101, 116, 255, 0.8), 0 0 20px rgba(101, 116, 255, 0.5), 0 0 40px rgba(101, 116, 255, 0.3);
+  text-shadow: 0 0 10px rgba(23, 72, 113, 0.6), 0 0 20px rgba(23, 72, 113, 0.4), 0 0 40px rgba(23, 72, 113, 0.2);
 }
 
-.text-glow-purple {
-  text-shadow: 0 0 10px rgba(129, 3, 252, 0.8), 0 0 20px rgba(129, 3, 252, 0.5), 0 0 40px rgba(129, 3, 252, 0.3);
+.text-glow-secondary {
+  text-shadow: 0 0 10px rgba(167, 118, 147, 0.6), 0 0 20px rgba(167, 118, 147, 0.4), 0 0 40px rgba(167, 118, 147, 0.2);
 }
 
 /* Gradient backgrounds */
 .gradient-dark {
-  background: linear-gradient(180deg, #2B103D 0%, #3d1a52 50%, #2B103D 100%);
+  background: linear-gradient(180deg, #0F2D4D 0%, #174871 50%, #0F2D4D 100%);
 }
 
 .gradient-radial-dark {
-  background: radial-gradient(ellipse at center, rgba(101, 116, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(23, 72, 113, 0.15) 0%, transparent 70%);
 }
 
 /* Custom scrollbar */
@@ -67,16 +67,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #2B103D;
+  background: #0F2D4D;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6574FF;
+  background: #174871;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8F60D;
+  background: #A77693;
 }
 
 /* Smooth scrolling */
