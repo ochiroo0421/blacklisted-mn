@@ -50,26 +50,26 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       className="relative min-h-screen overflow-hidden"
-      style={{ background: '#2B103D' }}
+      style={{ background: '#0F2D4D' }}
     >
       <div 
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse at 20% 50%, rgba(101, 116, 255, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(129, 3, 252, 0.1) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(184, 246, 13, 0.05) 0%, transparent 50%)'
+          background: 'radial-gradient(ellipse at 20% 50%, rgba(23, 72, 113, 0.3) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(167, 118, 147, 0.2) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(222, 209, 198, 0.05) 0%, transparent 50%)'
         }}
       />
       
       <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: `linear-gradient(rgba(101, 116, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(101, 116, 255, 0.03) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(23, 72, 113, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 72, 113, 0.05) 1px, transparent 1px)`,
           backgroundSize: '80px 80px'
         }}
       />
 
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #6574FF 0%, transparent 70%)', filter: 'blur(80px)' }} />
-      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #8103FC 0%, transparent 70%)', filter: 'blur(100px)' }} />
-      <div className="absolute top-1/2 right-1/3 w-48 h-48 rounded-full opacity-5" style={{ background: 'radial-gradient(circle, #B8F60D 0%, transparent 70%)', filter: 'blur(60px)' }} />
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full opacity-15" style={{ background: 'radial-gradient(circle, #174871 0%, transparent 70%)', filter: 'blur(80px)' }} />
+      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #A77693 0%, transparent 70%)', filter: 'blur(100px)' }} />
+      <div className="absolute top-1/2 right-1/3 w-48 h-48 rounded-full opacity-5" style={{ background: 'radial-gradient(circle, #DED1C6 0%, transparent 70%)', filter: 'blur(60px)' }} />
 
       <div className="relative z-10 flex min-h-screen">
         
@@ -83,31 +83,31 @@ export default function HeroSection() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.15] tracking-tight">
                 Ð¢ÐÐÐ« Ð¥ÐÐ ÐÐÐ“Ò®Ð™
                 <br />
-                <span className="text-[#B8F60D]">Ð—Ò®Ð™Ð›Ð¡ Ð‘ÐÐ™Ð“ÐÐ</span>
+                <span className="text-[#DED1C6]">Ð—Ò®Ð™Ð›Ð¡ Ð‘ÐÐ™Ð“ÐÐ</span>
                 <br />
-                <span className="text-[#6574FF]">Ð§ Ð®Ðœ Ð‘Ð˜Ð›Ò®Ò®?</span>
+                <span className="text-[#A77693]">Ð§ Ð®Ðœ Ð‘Ð˜Ð›Ò®Ò®?</span>
               </h1>
             </div>
 
-            <p className="text-base text-white/60 max-w-md leading-relaxed">
+            <p className="text-base text-[#DED1C6]/70 max-w-md leading-relaxed">
               Ð¢Ò¯Ñ€ÑÑÑÐ»Ò¯Ò¯Ð»ÑÐ³Ñ‡ Ð±Ð¾Ð»Ð¾Ð½ Ñ‚Ò¯Ñ€ÑÑÑÐ»ÑÐ³Ñ‡Ð´Ð¸Ð¹Ð½ Ò¯Ð½ÑÐ½Ñ‡ ÑÑÑ‚Ð³ÑÐ³Ð´ÑÐ»Ð´ Ñ‚ÑƒÐ»Ð³ÑƒÑƒÑ€Ð»Ð°Ð½ 
               ÑˆÑƒÐ´Ð°Ñ€Ð³Ð° Ñ‚Ò¯Ñ€ÑÑÑÐ¸Ð¹Ð½ Ð·Ð°Ñ… Ð·ÑÑÐ»Ð¸Ð¹Ð³ Ð±Ð¸Ð¹ Ð±Ð¾Ð»Ð³Ð¾Ð½Ð¾
             </p>
 
-            <div className="flex items-center gap-6 pt-4 border-t border-[#6574FF]/20">
+            <div className="flex items-center gap-6 pt-4 border-t border-[#174871]/40">
               <div>
-                <div className="text-xl font-bold text-[#B8F60D]">2,500+</div>
-                <div className="text-xs text-white/40 tracking-[1px]">Ð‘Ò¯Ñ€Ñ‚Ð³ÑÐ»Ñ‚ÑÐ¹</div>
+                <div className="text-xl font-bold text-[#DED1C6]">2,500+</div>
+                <div className="text-xs text-[#DED1C6]/50 tracking-[1px]">Ð‘Ò¯Ñ€Ñ‚Ð³ÑÐ»Ñ‚ÑÐ¹</div>
               </div>
-              <div className="w-px h-8 bg-[#6574FF]/30" />
+              <div className="w-px h-8 bg-[#174871]/40" />
               <div>
-                <div className="text-xl font-bold text-[#6574FF]">8,000+</div>
-                <div className="text-xs text-white/40 tracking-[1px]">Ð¡ÑÑ‚Ð³ÑÐ³Ð´ÑÐ»</div>
+                <div className="text-xl font-bold text-[#174871]">8,000+</div>
+                <div className="text-xs text-[#DED1C6]/50 tracking-[1px]">Ð¡ÑÑ‚Ð³ÑÐ³Ð´ÑÐ»</div>
               </div>
-              <div className="w-px h-8 bg-[#6574FF]/30" />
+              <div className="w-px h-8 bg-[#174871]/40" />
               <div>
-                <div className="text-xl font-bold text-[#8103FC]">95%</div>
-                <div className="text-xs text-white/40 tracking-[1px]">Ð˜Ñ‚Ð³ÑÐ»Ñ†ÑÐ»</div>
+                <div className="text-xl font-bold text-[#A77693]">95%</div>
+                <div className="text-xs text-[#DED1C6]/50 tracking-[1px]">Ð˜Ñ‚Ð³ÑÐ»Ñ†ÑÐ»</div>
               </div>
             </div>
           </div>
@@ -115,43 +115,40 @@ export default function HeroSection() {
 
         <div className="w-[55%] relative flex items-center justify-center">
           <div 
-            className="absolute w-[80%] h-[80%] rounded-full opacity-20"
+            className="absolute w-[80%] h-[80%] rounded-full opacity-15"
             style={{
-              background: 'radial-gradient(circle, rgba(184, 246, 13, 0.3) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(222, 209, 198, 0.2) 0%, transparent 70%)',
               filter: 'blur(60px)'
             }}
           />
 
           <img
             ref={ladyJusticeRef}
-            src="/lady-justice.jpg"
+            src="/lady-justice.png"
             alt="Lady Justice"
             className="absolute w-full h-full object-contain object-center"
             style={{
               willChange: "transform, opacity, filter",
-              mixBlendMode: "lighten",
-              filter: "contrast(1.2) brightness(1.1)",
-              maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
+              filter: "drop-shadow(0 0 30px rgba(23, 72, 113, 0.3))",
             }}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2B103D] via-transparent to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#2B103D] to-transparent" />
-          <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-[#2B103D] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0F2D4D] via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0F2D4D] to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-[#0F2D4D] to-transparent" />
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
-        <span className="text-white/40 text-xs tracking-[2px]">Ð”ÐžÐžÐ¨ Ð“Ò®Ð™Ð›Ð“Ð­Ð­Ð Ð­Ð™</span>
+        <span className="text-[#DED1C6]/50 text-xs tracking-[2px]">Ð”ÐžÐžÐ¨ Ð“Ò®Ð™Ð›Ð“Ð­Ð­Ð Ð­Ð™</span>
         <div className="animate-bounce">
-          <svg className="w-6 h-6 text-[#B8F60D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 text-[#DED1C6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#2B103D] to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0F2D4D] to-transparent z-10" />
     </section>
   );
 }
